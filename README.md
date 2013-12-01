@@ -18,15 +18,15 @@
  *  - tag name e.g. 'li'
  * @return {SpotifyDOM}
  */
-var SpotifyDOM = function(selector) {
+var SpotifyDOM = function( selector ) {
 
-    if( selector ) {
-        if( selector.nodeType ) {
+    if( selector ) { //check if the parameter has been given
+        if( selector.nodeType ) { //handle DOM Element entry
 
             this[0] = selector;
             this.length = 1;
 
-        } else if( typeof selector === 'string' ) {
+        } else if( typeof selector === 'string' ) { //handle #id, .class and element entries
             var elements = document.querySelectorAll(selector);
 
             for( var i in elements ) {
@@ -51,16 +51,16 @@ var SpotifyDOM = function(selector) {
  * is a collection,
  *  e.g. SpotifyDOM(‘li’).html(‘test’)
  */
-SpotifyDOM.prototype.html = function(content) {
+SpotifyDOM.prototype.html = function( content ) {
 
-    if( this.isCollection() ) {
+    if( this.isCollection() ) { //check if the instance is a collection
         var SpotifyDOMInvalidElement = function() {
             return this;
         };
-        return new SpotifyDOMInvalidElement();
+        return new SpotifyDOMInvalidElement(); //error handling
 
     } else {
-        if( content && (typeof content !== 'undefined') ) {
+        if( content && (typeof content !== 'undefined') ) { //change the inner content
             this[0].innerHTML = content;
         }
     }
@@ -78,10 +78,11 @@ SpotifyDOM.prototype.html = function(content) {
  * @param {Function} callback
  * @return {SpotifyDOM}
  */
-SpotifyDOM.prototype.each = function(callback) {
+SpotifyDOM.prototype.each = function( callback ) {
 
     if( callback && (typeof callback === 'function') ) {
         for( var i = 0; i < this.length; i++ ) {
+            //make a spotifyDOM instance of the DOM element to pass to the callback
             var spotifyElement = new SpotifyDOM(this[i]);
             callback.call(this, spotifyElement, i);
         }

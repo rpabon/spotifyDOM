@@ -1,7 +1,6 @@
 /**
- * User: Ricardo Pabon
- * Date: 29.11.13
- * Time: 22:24
+ * Author: Ricardo Pabón
+ * Date: 01.12.13
  */
 
 /**
@@ -15,13 +14,13 @@
  */
 var SpotifyDOM = function( selector ) {
 
-    if( selector ) {
-        if( selector.nodeType ) {
+    if( selector ) { //check if the parameter has been given
+        if( selector.nodeType ) { //handle DOM Element entry
 
             this[0] = selector;
             this.length = 1;
 
-        } else if( typeof selector === 'string' ) {
+        } else if( typeof selector === 'string' ) { //handle #id, .class and element entries
             var elements = document.querySelectorAll(selector);
 
             for( var i in elements ) {
@@ -48,14 +47,14 @@ var SpotifyDOM = function( selector ) {
  */
 SpotifyDOM.prototype.html = function( content ) {
 
-    if( this.isCollection() ) {
+    if( this.isCollection() ) { //check if the instance is a collection
         var SpotifyDOMInvalidElement = function() {
             return this;
         };
-        return new SpotifyDOMInvalidElement();
+        return new SpotifyDOMInvalidElement(); //error handling
 
     } else {
-        if( content && (typeof content !== 'undefined') ) {
+        if( content && (typeof content !== 'undefined') ) { //change the inner content
             this[0].innerHTML = content;
         }
     }
@@ -77,6 +76,7 @@ SpotifyDOM.prototype.each = function( callback ) {
 
     if( callback && (typeof callback === 'function') ) {
         for( var i = 0; i < this.length; i++ ) {
+            //make a spotifyDOM instance of the DOM element to pass to the callback
             var spotifyElement = new SpotifyDOM(this[i]);
             callback.call(this, spotifyElement, i);
         }
