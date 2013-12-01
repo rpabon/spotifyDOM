@@ -1,13 +1,11 @@
-spotifyDOM solution by ![rpabon8bit](../img/favicon.png)
-========================================================
+# spotifyDOM solution by Ricardo Pabón ![rpabon8bit](/img/favicon.png)
 
 * The solution is included in __js/spotifyDOM.js__
 * Tests are included in __js/tests.js__
 * The code in both files can be seen also in this document
-* The solution can be seen online [here](http://pabon.16mb.com/spotifyDOM)
+* The solution can be seen online [here](http://pabon.16mb.com/spotifydom)
 
-Proposed solution
-=================
+## Proposed solution
 
 ```javascript
 /**
@@ -100,12 +98,11 @@ SpotifyDOM.prototype.isCollection = function() {
 };
 ```
 
-Tests for the proposed solution
-===============================
+## Tests for the proposed solution
 
 
 ```javascript
-//TEST 1 :: By element id
+    //TEST 1 :: By element id
     //get the element <p id="paragraph"></p>
     var paragraph = new SpotifyDOM('#paragraph');
 
