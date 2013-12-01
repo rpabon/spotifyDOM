@@ -4,7 +4,7 @@
 * The solution is included in __js/spotifyDOM.js__
 * Tests are included in __js/tests.js__
 * The code in both files can be also seen in this document
-* The solution can be seen online >>[HERE!](http://pabon.16mb.com/spotifydom)<<
+* The solution can be seen online [HERE!](http://pabon.16mb.com/spotifydom)
 
 ## Proposed solution
 
