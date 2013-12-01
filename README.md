@@ -1,4 +1,5 @@
-# spotifyDOM solution by Ricardo Pabón ![rpabon8bit](/img/favicon.png)
+# spotifyDOM solution
+### by Ricardo Pabón ![rpabon8bit](/img/favicon.png)
 
 * The solution is included in __js/spotifyDOM.js__
 * Tests are included in __js/tests.js__
