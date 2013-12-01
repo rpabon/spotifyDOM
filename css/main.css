@@ -1,3 +1,7 @@
+body{
+    background: #ffffff url('/img/grey.png') repeat right top;
+}
+
 .list-group-item > .badge {
     float: left;
     margin-right: 16px;
