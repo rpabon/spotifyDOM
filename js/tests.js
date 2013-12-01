@@ -68,14 +68,16 @@ var today = function(){
     var yyyy = today.getFullYear();
     var HH = today.getHours();
     var MM = today.getMinutes();
+    var SS = today.getSeconds();
     if( dd < 10 ) { dd = '0' + dd }
     if( mm < 10 ) { mm = '0' + mm }
     if( HH < 10 ) { HH = '0' + HH }
     if( MM < 10 ) { MM = '0' + MM }
+    if( SS < 10 ) { SS = '0' + SS }
 
     return{
         date: dd + '.' + mm + '.' + yyyy,
-        time: HH + ':' + MM
+        time: HH + ':' + MM + ':' + SS
     }
 };
 /**********************************************************************/
